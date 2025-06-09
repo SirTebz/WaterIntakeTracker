@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Intake Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Water Intake Tracker</h1>
+            <p class="subtitle">Stay hydrated, feel great</p>
+        </header>
+
+        <div class="main-section">
+            <div class="progress-section">
+                <div class="glass-container">
+                    <div class="glass">
+                        <div class="water" id="waterLevel"></div>
+                    </div>
+                </div>
+                <div class="progress-circle">
+                    <svg>
+                        <circle class="bg-circle" cx="100" cy="100" r="90"></circle>
+                        <circle class="progress-ring" cx="100" cy="100" r="90"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <span id="currentAmount">0</span>
+                        <span class="unit">ml</span>
+                    </div>
+                </div>
+                <div class="goal">Goal: <span id="dailyGoal">2000</span>ml</div>
+            </div>
+
+            <div class="controls">
+                <div class="quick-add">
+                    <button class="water-btn" data-amount="250">250ml</button>
+                    <button class="water-btn" data-amount="500">500ml</button>
+                    <button class="water-btn" data-amount="750">750ml</button>
+                </div>
+
+                <div class="custom-add">
+                    <input type="number" id="customAmount" placeholder="Custom amount (ml)">
+                    <button id="addCustom">Add</button>
+                </div>
+
+                <div class="reminder-toggle">
+                    <label for="reminderSwitch">Reminders</label>
+                    <input type="checkbox" id="reminderSwitch">
+                    <select id="reminderInterval">
+                        <option value="30">Every 30 mins</option>
+                        <option value="60">Every 1 hour</option>
+                        <option value="120">Every 2 hours</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="history">
+            <h3>Today's Log</h3>
+            <ul id="waterLog"></ul>
+            <button id="resetDay">Reset Day</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
